@@ -11,6 +11,7 @@ rl.on('line', (line) => {
   const [line] = lines;
   const numbers = line.trim().split(' ');
   const obj = numbers.reduce((acc, item) => {
+    // i dont want my keys to be automatically sorted, so i add ' '
     const key = ' '.concat(item);
     if (acc[key] === undefined) {
       acc[key] = 1;
