@@ -25,7 +25,7 @@ rl.on('line', (line) => {
 
   const result = Object.entries(packagesData)
     .sort(([key1], [key2]) => Number(key1) - Number(key2))
-    .map(([key, value]) => `${key} ${value}`);
+    .map(([key, value]) => [key, value].join(' '));
 
   console.log(result.join('\n'));
 });
