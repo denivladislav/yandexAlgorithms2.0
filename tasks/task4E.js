@@ -12,8 +12,6 @@ rl.on('line', (line) => {
     .map((line) => line.trim())
     .filter((trimmedLine) => trimmedLine);
 
-  // console.log(dataLines);
-
   const state = {
     topics: [],
     messages: [],
@@ -38,8 +36,6 @@ rl.on('line', (line) => {
     }
   });
 
-  // console.log(state);
-
   const topicsAndTheirMsgsData = state.topics.reduce((acc, topic) => {
     const currentTopicId = topic.topicId;
     const currentTopicName = topic.text;
@@ -52,11 +48,7 @@ rl.on('line', (line) => {
     return acc;
   }, []);
 
-  // console.log(topicsAndTheirMsgsData);
-
   const maxMessages = Math.max(...topicsAndTheirMsgsData.map((topic) => topic.numOfMsgs));
-  // console.log(maxMessages);
-
   const [topicWithMaxMsgs] = topicsAndTheirMsgsData
     .filter((topic) => topic.numOfMsgs === maxMessages);
 
