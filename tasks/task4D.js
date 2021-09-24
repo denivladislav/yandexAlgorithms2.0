@@ -24,8 +24,6 @@ rl.on('line', (line) => {
     return acc;
   }, {});
 
-  // console.log('!!!', initialElectionData);
-
   const initialSumOfVotes = Object.values(initialElectionData).reduce((acc, item) => acc + item, 0);
   const firstElectionFraction = initialSumOfVotes / numberOfMandates;
 
@@ -62,7 +60,6 @@ rl.on('line', (line) => {
       mandatesLeft -= 1;
       i += 1;
     }
-    // console.log(sortedElectionEntries);
     sortedElectionEntries.forEach(([party, [mandates]]) => {
       electionData[party] = mandates;
     });
